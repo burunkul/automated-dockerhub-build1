@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN echo "#!/bin/bash" > /bootstrap.sh
-RUN echo "while true; do echo 'Im not sleeping!!!'; sleep 1; done" >> /bootstrap.sh
+RUN echo "while true; do echo 'Im not sleeping!!!'; sleep 2; done" >> /bootstrap.sh
 RUN chmod +x "/bootstrap.sh"
 
 HEALTHCHECK --interval=5s --timeout=5s --start-period=3s --retries=3 \
