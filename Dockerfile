@@ -10,6 +10,6 @@ RUN echo "#!/bin/bash" > /bootstrap.sh
 RUN echo "while true; do echo 'Im not sleeping!!!'; sleep 5; done" >> /bootstrap.sh
 RUN chmod +x "/bootstrap.sh"
 
-HEALTHCHECK --interval=5s --timeout=5s --start-period=3s --retries=3 \
+HEALTHCHECK --interval=5s --timeout=5s --start-period=3s --retries=2 \
     CMD ["ping","-c", "1", "localhost"] || exit 1
 ENTRYPOINT ["/bootstrap.sh"]
